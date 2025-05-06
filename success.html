@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - AetherFlow</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .success-container {
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .success-icon {
+            font-size: 80px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .success-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .success-message {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        .next-steps {
+            background: #f5f9ff;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .next-steps h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .next-steps ul {
+            text-align: left;
+            margin-left: 20px;
+        }
+        
+        .next-steps li {
+            margin-bottom: 10px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .language-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            padding: 5px 10px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .transaction-info {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>AetherFlow</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="terms-of-service.html">Terms</a></li>
+                    <li><a href="privacy-policy.html">Privacy</a></li>
+                    <li><a href="refund-policy.html">Refunds</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="language-switch" onclick="toggleLanguage()">中文 / English</div>
+
+    <section class="success-section">
+        <div class="container">
+            <div class="success-container">
+                <div class="success-icon">✓</div>
+                <h1 class="success-title en">Payment Successful!</h1>
+                <h1 class="success-title zh" style="display:none;">支付成功！</h1>
+                
+                <p class="success-message en">
+                    Thank you for upgrading to AetherFlow Pro! Your account has been successfully upgraded, and you now have access to all premium features.
+                </p>
+                <p class="success-message zh" style="display:none;">
+                    感谢您升级到AetherFlow专业版！您的账户已成功升级，现在您可以使用所有高级功能。
+                </p>
+                
+                <div class="next-steps">
+                    <h3 class="en">Next Steps:</h3>
+                    <h3 class="zh" style="display:none;">后续步骤：</h3>
+                    
+                    <ul class="en">
+                        <li>Return to the AetherFlow extension to see your new Pro status</li>
+                        <li>Your Pro badge should now be active (gold)</li>
+                        <li>Enjoy your expanded prompt storage (up to 100 prompts)</li>
+                        <li>Take advantage of 50 optimization attempts daily</li>
+                        <li>Access all premium features including data export</li>
+                    </ul>
+                    
+                    <ul class="zh" style="display:none;">
+                        <li>返回AetherFlow扩展程序查看您的专业版状态</li>
+                        <li>您的专业版徽章现在应该已激活（金色）</li>
+                        <li>享受扩展的提示词存储空间（最多100个提示词）</li>
+                        <li>每天可使用50次优化尝试</li>
+                        <li>使用所有高级功能，包括数据导出</li>
+                    </ul>
+                </div>
+                
+                <div class="transaction-info">
+                    <p class="en">Transaction ID: <span id="transaction-id">Processing...</span></p>
+                    <p class="zh" style="display:none;">交易ID：<span id="transaction-id-zh">处理中...</span></p>
+                    <p class="en">Plan: <span id="plan-type">Monthly</span></p>
+                    <p class="zh" style="display:none;">方案：<span id="plan-type-zh">月度</span></p>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="chrome-extension://ldpadjcdbfndeghcklogoppmbnmphbki/pages/sidepanel/index.html" id="open-extension-btn" class="btn btn-primary en">Open AetherFlow</a>
+                    <a href="chrome-extension://ldpadjcdbfndeghcklogoppmbnmphbki/pages/sidepanel/index.html" id="open-extension-btn-zh" class="btn btn-primary zh" style="display:none;">打开AetherFlow</a>
+                    
+                    <a href="contact.html" class="btn btn-outline en">Need Help?</a>
+                    <a href="contact.html" class="btn btn-outline zh" style="display:none;">需要帮助？</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>AetherFlow</h2>
+                    <p>Enhancing your AI experience</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-section">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-section">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="refund-policy.html">Refund Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AetherFlow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 切换语言
+        function toggleLanguage() {
+            const enElements = document.querySelectorAll('.en');
+            const zhElements = document.querySelectorAll('.zh');
+            
+            enElements.forEach(el => {
+                el.style.display = el.style.display === 'none' ? 'block' : 'none';
+            });
+            
+            zhElements.forEach(el => {
+                el.style.display = el.style.display === 'none' ? 'block' : 'none';
+            });
+            
+            // 保存语言偏好
+            const currentLang = document.querySelector('.en').style.display === 'none' ? 'zh' : 'en';
+            localStorage.setItem('aetherflow_language', currentLang);
+        }
+        
+        // 应用保存的语言偏好
+        function applyLanguagePreference() {
+            const savedLang = localStorage.getItem('aetherflow_language');
+            if (savedLang === 'zh') {
+                toggleLanguage();
+            }
+        }
+        
+        // 处理支付成功数据
+        document.addEventListener('DOMContentLoaded', function() {
+            // 应用保存的语言偏好
+            applyLanguagePreference();
+            
+            // 初始化Firebase
+            if (typeof firebase !== 'undefined') {
+                // 配置并初始化Firebase
+                const firebaseConfig = {
+                    apiKey: "AIzaSyCulWQxvrzxDOLGOxzi2ngj9n0DwzvqJFw",
+                    authDomain: "aetherflow-b6459.firebaseapp.com",
+                    projectId: "aetherflow-b6459",
+                    storageBucket: "aetherflow-b6459.firebasestorage.app",
+                    messagingSenderId: "423266303314",
+                    appId: "1:423266303314:web:9cbf8adb847f043bd34e8b",
+                    measurementId: "G-ZD5E2WY22N"
+                };
+                
+                if (!firebase.apps.length) {
+                    firebase.initializeApp(firebaseConfig);
+                }
+                
+                // 监听认证状态变化
+                firebase.auth().onAuthStateChanged(function(user) {
+                    if (user) {
+                        console.log('已登录用户:', user.email);
+                    } else {
+                        console.log('用户未登录');
+                    }
+                });
+            }
+            
+            // 解析URL参数
+            const urlParams = new URLSearchParams(window.location.search);
+            const checkoutId = urlParams.get('checkout');
+            const planType = urlParams.get('plan');
+            const envParam = urlParams.get('env');
+            
+            // 判断环境
+            const isSandbox = envParam === 'sandbox' || 
+                            envParam === 'test' || 
+                            localStorage.getItem('aetherflow_env') === 'sandbox';
+            
+            // 如果是沙盒环境，显示相应标识
+            if (isSandbox) {
+                const envIndicator = document.createElement('div');
+                envIndicator.style.position = 'fixed';
+                envIndicator.style.bottom = '10px';
+                envIndicator.style.left = '10px';
+                envIndicator.style.padding = '5px 10px';
+                envIndicator.style.backgroundColor = 'rgba(255, 0, 0, 0.2)';
+                envIndicator.style.color = '#900';
+                envIndicator.style.borderRadius = '4px';
+                envIndicator.style.fontSize = '12px';
+                envIndicator.style.zIndex = '9999';
+                envIndicator.textContent = 'SANDBOX PAYMENT';
+                document.body.appendChild(envIndicator);
+                
+                // 记录环境
+                localStorage.setItem('aetherflow_env', 'sandbox');
+            }
+            
+            // 如果有结账参数，使用它们进行验证
+            if (checkoutId) {
+                console.log('Checkout ID:', checkoutId);
+                console.log('Plan Type:', planType);
+                console.log('Environment:', isSandbox ? 'SANDBOX' : 'PRODUCTION');
+                
+                // 更新交易ID显示
+                const transactionElements = [
+                    document.getElementById('transaction-id'),
+                    document.getElementById('transaction-id-zh')
+                ];
+                
+                transactionElements.forEach(element => {
+                    if (element) {
+                        element.textContent = checkoutId;
+                    }
+                });
+                
+                // 更新计划类型显示
+                const planElement = document.getElementById('plan-type');
+                const planElementZh = document.getElementById('plan-type-zh');
+                
+                if (planType === 'annual') {
+                    if (planElement) planElement.textContent = 'Annual';
+                    if (planElementZh) planElementZh.textContent = '年度';
+                } else {
+                    if (planElement) planElement.textContent = 'Monthly';
+                    if (planElementZh) planElementZh.textContent = '月度';
+                }
+                
+                // 尝试与扩展通信，更新会员状态
+                communicateWithExtension(checkoutId, planType);
+                
+                // 保存到localStorage作为备份
+                localStorage.setItem('aetherflow_payment_success', 'true');
+                localStorage.setItem('aetherflow_checkout_id', checkoutId);
+                localStorage.setItem('aetherflow_plan_type', planType || 'monthly');
+            }
+            
+            // 更新打开AetherFlow按钮，使用当前的扩展ID
+            updateExtensionButtons();
+        });
+        
+        // 尝试与扩展通信，通知支付成功
+        function communicateWithExtension(checkoutId, planType) {
+            try {
+                // 确保 Firebase 已经初始化
+                if (typeof firebase === 'undefined' || !firebase.auth) {
+                    console.error('Firebase未初始化，无法验证用户');
+                    updateStatusMessage('认证服务不可用，请重新打开扩展检查会员状态');
+                    
+                    // 保存到localStorage作为备份
+                    savePaymentDataToLocalStorage(checkoutId, planType);
+                    return;
+                }
+                
+                // 获取当前用户
+                const currentUser = firebase.auth().currentUser;
+                if (!currentUser) {
+                    console.log('用户未登录，尝试从localStorage恢复用户信息');
+                    const storedUser = localStorage.getItem('aetherflow_user');
+                    
+                    if (storedUser) {
+                        try {
+                            const userData = JSON.parse(storedUser);
+                            console.log('从localStorage获取用户信息:', userData);
+                            sendMessageToExtension(checkoutId, planType, userData);
+                        } catch (e) {
+                            console.error('解析存储的用户信息失败:', e);
+                            updateStatusMessage('无法获取用户信息，请在扩展中登录后检查会员状态');
+                            savePaymentDataToLocalStorage(checkoutId, planType);
+                        }
+                    } else {
+                        console.log('未找到用户信息，保存支付数据等待稍后处理');
+                        updateStatusMessage('未检测到登录状态，请在扩展中登录后会员状态将自动更新');
+                        savePaymentDataToLocalStorage(checkoutId, planType);
+                    }
+                    return;
+                }
+                
+                // 用户已登录，发送消息
+                sendMessageToExtension(checkoutId, planType, {
+                    uid: currentUser.uid,
+                    email: currentUser.email,
+                    displayName: currentUser.displayName
+                });
+            } catch (error) {
+                console.error('与扩展通信失败:', error);
+                updateStatusMessage('与扩展通信失败，请稍后在扩展中检查会员状态');
+                savePaymentDataToLocalStorage(checkoutId, planType);
+            }
+        }
+        
+        // 向扩展发送消息
+        function sendMessageToExtension(checkoutId, planType, userData) {
+            // 获取环境
+            const urlParams = new URLSearchParams(window.location.search);
+            const envParam = urlParams.get('env');
+            const environment = envParam || localStorage.getItem('aetherflow_env') || 'production';
+            
+            // 使用Chrome扩展消息机制
+            const extensionId = 'ldpadjcdbfndeghcklogoppmbnmphbki'; // 正式扩展ID
+            
+            // 准备消息数据
+            const messageData = {
+                type: 'PAYMENT_SUCCESS',
+                checkoutId: checkoutId,
+                planType: planType || 'monthly',
+                environment: environment,
+                timestamp: Date.now(),
+                user: userData // 包含用户信息
+            };
+            
+            console.log('发送消息到扩展:', messageData);
+            
+            // 尝试发送消息到扩展
+            if (typeof chrome !== 'undefined' && chrome.runtime) {
+                chrome.runtime.sendMessage(extensionId, messageData, function(response) {
+                    if (chrome.runtime.lastError) {
+                        console.log('发送消息到扩展失败:', chrome.runtime.lastError);
+                        updateStatusMessage('与扩展通信失败，请稍后在扩展中检查会员状态');
+                        savePaymentDataToLocalStorage(checkoutId, planType);
+                    } else if (response && response.success) {
+                        console.log('成功与扩展通信:', response);
+                        updateStatusMessage('支付成功！会员状态已更新');
+                        // 成功后可以清除本地存储的支付数据
+                        clearSavedPaymentData();
+                    } else {
+                        console.log('扩展返回错误:', response);
+                        const errorMessage = response?.error === 'USER_NOT_AUTHENTICATED' 
+                            ? '用户未登录，请在扩展中登录后会员状态将自动更新'
+                            : '更新会员状态失败，请在扩展中检查';
+                        updateStatusMessage(errorMessage);
+                        savePaymentDataToLocalStorage(checkoutId, planType);
+                    }
+                });
+            } else {
+                console.log('Chrome API不可用，保存到localStorage等待稍后处理');
+                updateStatusMessage('浏览器扩展无法访问，请打开扩展继续');
+                savePaymentDataToLocalStorage(checkoutId, planType);
+            }
+        }
+        
+        // 保存支付数据到本地存储
+        function savePaymentDataToLocalStorage(checkoutId, planType) {
+            localStorage.setItem('aetherflow_payment_success', 'true');
+            localStorage.setItem('aetherflow_checkout_id', checkoutId);
+            localStorage.setItem('aetherflow_plan_type', planType || 'monthly');
+            console.log('支付数据已保存到本地存储，扩展启动时将检查并处理');
+        }
+        
+        // 清除本地存储的支付数据
+        function clearSavedPaymentData() {
+            localStorage.removeItem('aetherflow_payment_success');
+            localStorage.removeItem('aetherflow_checkout_id');
+            localStorage.removeItem('aetherflow_plan_type');
+            console.log('本地存储的支付数据已清除');
+        }
+        
+        // 更新状态消息
+        function updateStatusMessage(message) {
+            const statusElement = document.getElementById('status');
+            const statusElementZh = document.querySelector('.success-message.zh');
+            
+            if (statusElement) {
+                statusElement.textContent = message;
+            }
+            
+            if (statusElementZh) {
+                statusElementZh.textContent = message;
+            }
+        }
+        
+        // 更新扩展按钮的URL
+        function updateExtensionButtons() {
+            const extensionButtons = [
+                document.getElementById('open-extension-btn'),
+                document.getElementById('open-extension-btn-zh')
+            ];
+            
+            extensionButtons.forEach(button => {
+                if (button) {
+                    // 为按钮添加点击事件处理
+                    button.addEventListener('click', function(e) {
+                        // 如果按钮URL不是扩展URL，阻止默认行为
+                        if (!button.href.includes('chrome-extension://')) {
+                            e.preventDefault();
+                            // 在新标签打开Chrome商店页面
+                            window.open('https://chrome.google.com/webstore/detail/aetherflow/ldpadjcdbfndeghcklogoppmbnmphbki', '_blank');
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AetherFlow - Pricing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 引入Paddle.js -->
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>AetherFlow</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pricing.html" class="active">Pricing</a></li>
+                    <li><a href="terms-of-service.html">Terms</a></li>
+                    <li><a href="privacy-policy.html">Privacy</a></li>
+                    <li><a href="refund-policy.html">Refunds</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#" id="auth-button" class="auth-button">Sign in</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="pricing-hero">
+        <div class="container">
+            <div class="pricing-hero-content">
+                <h1>Simple, Transparent Pricing</h1>
+                <p>Choose the plan that best fits your needs</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-details">
+        <div class="container">
+            <div class="pricing-tabs">
+                <button class="pricing-tab active" onclick="showMonthly()">Monthly</button>
+                <button class="pricing-tab" onclick="showAnnual()">Annual (Save 33%)</button>
+            </div>
+
+            <div class="pricing-cards-container">
+                <div class="pricing-cards">
+                    <div class="pricing-card free">
+                        <div class="card-header">
+                            <h3>Free</h3>
+                            <div class="price">$0</div>
+                            <p>Forever</p>
+                        </div>
+                        <div class="card-features">
+                            <ul>
+                                <li>Store up to 5 prompts</li>
+                                <li>3 optimization attempts daily</li>
+                                <li>Basic features access</li>
+                                <li>Single device usage</li>
+                                <li>Community support</li>
+                            </ul>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://chrome.google.com/webstore/detail/aetherflow/ldpadjcdbfndeghcklogoppmbnmphbki" class="btn btn-outline">Get Started</a>
+                        </div>
+                    </div>
+                    <div class="pricing-card premium monthly-plan">
+                        <div class="most-popular">Most Popular</div>
+                        <div class="card-header">
+                            <h3>Pro</h3>
+                            <div class="price">$3.99</div>
+                            <p>per month</p>
+                        </div>
+                        <div class="card-features">
+                            <ul>
+                                <li>Store up to 100 prompts</li>
+                                <li>50 optimization attempts daily</li>
+                                <li>All advanced features</li>
+                                <li>Multi-device sync</li>
+                                <li>Multi-format data export</li>
+                                <li>Priority support</li>
+                            </ul>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" class="btn btn-primary monthly-checkout" data-plan="monthly">Upgrade Now</a>
+                        </div>
+                    </div>
+                    <div class="pricing-card premium annual-plan" style="display: none;">
+                        <div class="best-value">Best Value</div>
+                        <div class="card-header">
+                            <h3>Pro Annual</h3>
+                            <div class="price">$39.99</div>
+                            <p>per year (Save 33%)</p>
+                        </div>
+                        <div class="card-features">
+                            <ul>
+                                <li>Store up to 100 prompts</li>
+                                <li>50 optimization attempts daily</li>
+                                <li>All advanced features</li>
+                                <li>Multi-device sync</li>
+                                <li>Multi-format data export</li>
+                                <li>Priority support</li>
+                                <li>Early access to new features</li>
+                            </ul>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" class="btn btn-primary annual-checkout" data-plan="annual">Upgrade Now</a>
+                        </div>
+                    </div>
+                </div>
+                <p class="subscription-note">All subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period. You can manage your subscription in your account settings.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-comparison">
+        <div class="container">
+            <h2>Feature Comparison</h2>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Free</th>
+                            <th>Pro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Prompt Storage</td>
+                            <td>5 prompts</td>
+                            <td>100 prompts</td>
+                        </tr>
+                        <tr>
+                            <td>Daily Optimization Attempts</td>
+                            <td>3</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>Quick Prompt Input</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Basic Prompt Library</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Multi-device Sync</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Prompt Categories</td>
+                            <td><span class="x">✕</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Advanced Search</td>
+                            <td><span class="x">✕</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Custom Tags</td>
+                            <td><span class="x">✕</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Data Export</td>
+                            <td><span class="x">✕</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Priority Support</td>
+                            <td><span class="x">✕</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Early Access to New Features</td>
+                            <td><span class="x">✕</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How does the billing work?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For monthly plans, you will be billed every month on the same date you initially subscribed. For annual plans, you will be billed once per year. All plans automatically renew unless cancelled.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I upgrade from monthly to annual?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you can upgrade from a monthly to an annual subscription at any time. When you upgrade, you'll be charged for the annual plan, and your monthly subscription will be cancelled.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I cancel my subscription?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can cancel your subscription at any time through the AetherFlow extension settings or by accessing the customer portal. After cancellation, you'll still have access to Pro features until the end of your current billing period.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What happens to my data if I downgrade?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>If you downgrade from Pro to Free, all your prompts will be preserved, but you'll only be able to actively use 5 prompts. The rest will be marked as read-only until you upgrade again.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer refunds?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer a 14-day refund window for new subscriptions. If you're not satisfied with our service during this period, you may request a full refund. Please refer to our <a href="refund-policy.html">Refund Policy</a> for more details.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Which payment methods do you accept?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards (Visa, MasterCard, American Express), as well as PayPal. All payments are securely processed through Paddle, our payment processor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Enhance Your AI Experience?</h2>
+            <p>Join thousands of users who are getting better results with AetherFlow Pro</p>
+            <a href="#" class="btn btn-large" onclick="scrollToPlans()">Choose Your Plan</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>AetherFlow</h2>
+                    <p>AI Prompt Management Chrome Extension</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="refund-policy.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="https://chrome.google.com/webstore/detail/aetherflow/ldpadjcdbfndeghcklogoppmbnmphbki">Chrome Store</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Email: support@aetherflow.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AetherFlow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load modular JavaScript files -->
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/paddle.js"></script>
+    <script defer src="js/pricing.js"></script>
+</body>
+</html> 
